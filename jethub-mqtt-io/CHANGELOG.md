@@ -1,5 +1,11 @@
-## What’s changed
+## Changes
 
-## 🧰 Maintenance
+- Add gpio2mqtt dispatch trigger workflow
+- Update configurations and scripts
+- Based on gpio2mqtt binary (dev)
 
-- Add GPIO numbers for kernel 6.2+ @adeepn (#48)
+## Test Plan
+
+- [ ] Verify addon installs correctly from beta repository
+- [ ] Test GPIO inputs/outputs on JetHub devices
+- [ ] Verify MQTT discovery works with Home Assistant
