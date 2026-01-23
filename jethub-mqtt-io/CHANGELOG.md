@@ -1,13 +1,13 @@
-## Changes
-- Updated gpio2mqtt binary to version 0.1.5-rc.1
+## What’s changed
 
-## gpio2mqtt Prerelease
-- Source: https://github.com/jethome-iot/gpio2mqtt
-- Tag: beta
-- This is a beta release for testing
+## 🚨 Breaking changes
 
-## What's Changed
-* fix(config): add legacy_mqttio compatibility settings by @adeepn in https://github.com/jethome-hassio-addons/addon-jethub-mqtt-io/pull/54
+- feat: migrate from mqtt-io to gpio2mqtt @adeepn (#52)
 
+## 🐛 Bug fixes
 
-**Full Changelog**: https://github.com/jethome-hassio-addons/addon-jethub-mqtt-io/compare/v0.4.0-rc.3...v0.4.1-rc.1
+- fix(config): add legacy_mqttio compatibility settings @adeepn (#54)
+
+## 🚀 Enhancements
+
+- feat(ci): add gpio2mqtt dispatch trigger workflow @adeepn (#53)
