@@ -1,6 +1,8 @@
-## JetHub GPIO2MQTT add-on — first beta
+## JetHome peripheral exposer — beta
 
-Next-generation add-on based on the [gpio2mqtt](https://github.com/jethome-iot/gpio2mqtt) daemon (binary **0.2.0**). It coexists with the legacy `jethub-mqtt-io` add-on and refuses to start while that one is running (both claim the same GPIO lines).
+Rename release: the add-on is now **JetHome peripheral exposer** (no uppercase acronym in the name).
+
+Based on the [gpio2mqtt](https://github.com/jethome-iot/gpio2mqtt) daemon (binary **0.2.0**). It coexists with the legacy `jethub-mqtt-io` add-on and refuses to start while that one is running (both claim the same GPIO lines).
 
 ### Highlights
 
