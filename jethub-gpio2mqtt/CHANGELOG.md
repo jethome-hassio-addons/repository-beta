@@ -1,7 +1,1 @@
-## What's changed
-
-- **gpio2mqtt daemon bumped to 0.2.1**:
-  - epoch-tagged GPIO state events (#105) — cleaner state/change semantics across reconnects;
-  - fix: cancellable, tracked timers for `TimedSetOutput` — no more leaked/stuck timed outputs (#103);
-  - `serde_yaml` replaced with the maintained `serde_yaml_ng` fork (#104).
-- Includes everything from 0.1.0-rc.3: the fixed legacy-addon startup guard (correct Supervisor endpoints, reason logged for every skip).
+Fix: the legacy-addon guard treated a 404 from `GET /addons/{slug}/info` as "not installed" — but on a live D2 that endpoint answered 404 for a running legacy add-on (it resolves through store data), so the guard passed while the GPIO lines were busy. The installed-apps list from `GET /supervisor/info` is now the primary source, matching the legacy add-on by slug or name (covers differently-slugged installs). The guard also logs the installed-apps digest (`slug=state`), so any future misfire is visible directly in the add-on log.
