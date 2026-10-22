@@ -1,7 +1,8 @@
 name: JetHome JetHub mqtt-io peripheral exposer
-version: 0.4.2-rc.2
+version: 0.4.2-rc.3
 slug: jethub-mqtt-io
-description: Expose JetHome JetHub peripheral (relays, inputs, etc..) via mqtt-io
+description: DEPRECATED - replaced by JetHome peripheral exposer. Expose JetHome JetHub
+  peripheral via mqtt-io
 url: https://github.com/jethome-hassio-addons/addon-jethub-mqtt-io
 init: false
 hassio_api: true

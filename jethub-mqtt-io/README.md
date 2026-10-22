@@ -6,6 +6,14 @@
 
 Expose [JetHome JetHub](https://jethome.com) resources (relays,inputs,etc..) to Home Assistant via gpio2mqtt
 
+## ⚠️ DEPRECATED
+
+This add-on is replaced by
+[JetHome peripheral exposer](https://github.com/jethome-hassio-addons/addon-jethub-gpio2mqtt)
+and will not receive any further development. Install the new add-on, stop and
+disable this one, then start the new one. See the new add-on's documentation
+for the migration notes.
+
 **Note**: _All used GPIOs will **disappear** from **/sys/class/gpio** during addon run_
 
 **Warning:** The auto-detection option works only on HAOS (Home Assistant Operating System).
@@ -62,5 +70,5 @@ If you are more interested in stable releases of our add-ons:
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v0.4.2--rc.2-blue.svg
-[release]: https://github.com/jethome-hassio-addons/addon-jethub-mqtt-io/tree/v0.4.2-rc.2
+[release-shield]: https://img.shields.io/badge/version-v0.4.2--rc.3-blue.svg
+[release]: https://github.com/jethome-hassio-addons/addon-jethub-mqtt-io/tree/v0.4.2-rc.3
