@@ -1,7 +1,8 @@
-## Fix
+## Fix for Armbian / HA Supervised installs (issue #2)
 
-- **AppArmor profile fixed: scripts use `rix` instead of `ix`.** The `ix` permission grants the execute transition but not the read permission, and a shebang script is read by its interpreter — so 1.0.1 failed to start with `/bin/bash: /usr/local/bin/entrypoint.sh: Permission denied`.
+On kernel 6.x (e.g. official JetHome Armbian bookworm images) the GPIO sysfs topology changed: the startup GPIO-unexport helper could not resolve the chip base and silently skipped, leaving sysfs-held lines busy — gpio2mqtt then failed with `Device or resource busy`.
 
-Verified on hardware and locally (profile loaded in the kernel, add-on image runs confined with the entrypoint executing normally).
+- sysfs chip base resolution now handles the modern topology (checks the resolved device directory first), keeps the legacy layouts as fallbacks, and adds a chip-label fallback (label read via the GPIO uAPI ioctl);
+- if the base cannot be resolved while the sysfs GPIO interface is active, the helper now fails loudly (listing the configured line offsets, with a manual unexport hint) instead of silently doing nothing.
 
-If you are on 1.0.1: update to this version. If you stayed on 1.0.0: update as usual — 1.0.2 includes the AppArmor hardening from 1.0.1 in working form (security rating 8/8).
+Testing on a JetHub D1/D1+ with Armbian + HA Supervised is welcome — please report in issue #2.
